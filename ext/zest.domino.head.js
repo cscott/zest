@@ -10,3 +10,9 @@
 
 // The selector engine is used without a global `document`.
 var document = null;
+
+var window = Object.create(null, {
+  location: { get: function() {
+    throw new Error('window.location is not supported.');
+  } }
+});
