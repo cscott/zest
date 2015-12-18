@@ -1,4 +1,5 @@
 "use strict";
+/* jshint eqnull: true */
 /**
  * Zest (https://github.com/chjj/zest)
  * A css selector engine.
