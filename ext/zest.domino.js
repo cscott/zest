@@ -4,7 +4,7 @@
 
 module.exports = exports = function(sel, context) {
   /* when context isn't a DocumentFragment and the selector is simple: */
-  if (context.nodeType !== 11 && !~sel.indexOf(' ')) {
+  if (context.nodeType !== 11 && sel.indexOf(' ') === -1) {
     if (sel[0] === '#' && context.rooted && /^#\w+$/.test(sel)) {
       return [context.doc.getElementById(sel.substring(1))];
     }
