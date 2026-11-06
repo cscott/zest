@@ -92,6 +92,14 @@ elements, and namespaces.
 a dynamic state, you should be binding to events for this (`:focus` is
 supported, but there is no fallback for legacy browsers).
 
+## Domino
+
+The selector engine in [domino](https://github.com/fgnass/domino)
+(`lib/select.js`) is built from this repository: `make domino` writes
+`zest.js` from `ext/zest.domino.head.js`, the shared part of
+`lib/zest.js` (between the `begin shared code` and `end shared code`
+markers), and `ext/zest.domino.js`.
+
 ## Extension
 
 Zest doesn't support (m)any non-standard selectors, but it is possible to add

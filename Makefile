@@ -18,8 +18,14 @@ zepto:
 	@cat lib/zest.js ext/zest.zepto.js > zest.js
 	@uglifyjs -o zest.min.js zest.js
 
+domino:
+	@cat ext/zest.domino.head.js > zest.js
+	@sed -e '1,/^\/\/ -- begin shared code/d' -e '/^\/\/ -- end shared code/,$$d' \
+		lib/zest.js >> zest.js
+	@cat ext/zest.domino.js >> zest.js
+
 clean:
 	@rm zest.js
 	@rm zest.min.js
 
-.PHONY: all clean ender jquery prototype zepto
+.PHONY: all clean domino ender jquery prototype zepto
